@@ -6,12 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:16 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 17:29:29 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:24:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <iostream>
 
 void	FragTrap::rangedAttack(std::string const & target)
 {

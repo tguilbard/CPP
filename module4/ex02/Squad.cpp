@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/10 09:52:06 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/10 10:57:35 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/05 08:30:17 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,10 +61,12 @@ Squad::~Squad()
 		delete act;
 		act = Nact;
 	}
+	_marine = NULL;
 }
 
 Squad &Squad::operator=(Squad const &toCopy)
 {
+	std::cout << "ici\n";
 	if (this != &toCopy)
 	{
 		TMarineList *act;
@@ -109,7 +111,7 @@ ISpaceMarine* Squad::getUnit(int num) const
 
 	i = 0;
 	act = _marine;
-	if (num < _unit)
+	if (num < _unit && num >= 0)
 	{
 		while (i < num)
 		{
@@ -142,6 +144,8 @@ int Squad::push(ISpaceMarine *add)
 				return (_unit);
 			act = act->next;
 		}
+		if (act->marine == add)
+			return (_unit);
 		act->next = new TMarineList;
 		act->next->marine = add;
 		act->next->next = NULL;

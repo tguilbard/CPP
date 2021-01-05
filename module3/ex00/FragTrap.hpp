@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:20 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 13:50:27 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:21:55 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define FRAGTRAP_HPP
 
 # include <string>
+# include <iostream>
+# include <stdlib.h>
+# include <time.h>
 
 class FragTrap
 {

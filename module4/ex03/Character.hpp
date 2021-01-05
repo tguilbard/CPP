@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 10:53:40 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/15 11:45:23 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/05 09:41:06 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,8 @@ class Character : public ICharacter
 {
 	private:
 	std::string _name;
-	AMateria* _inv[4];
+	AMateria* 	_inv[4];
+	int			_nb;
 
 	public:
 	Character();

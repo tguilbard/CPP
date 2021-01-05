@@ -6,12 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 11:35:59 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/26 12:20:37 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:47:47 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "NinjaTrap.hpp"
-#include <iostream>
 
 void	NinjaTrap::rangedAttack(std::string const & target)
 {

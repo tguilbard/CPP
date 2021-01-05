@@ -6,17 +6,15 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 11:34:05 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/26 12:17:54 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:48:59 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef NINJATRAP_HPP
 # define NINJATRAP_HPP
 
-# include "ClapTrap.hpp"
 # include "FragTrap.hpp"
 # include "ScavTrap.hpp"
-# include <string>
 
 class NinjaTrap : public ClapTrap
 {

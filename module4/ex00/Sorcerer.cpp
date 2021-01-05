@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 10:37:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 11:35:26 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:59:55 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,13 +15,13 @@
 
 ostream& operator<<(ostream& os, Sorcerer const & toDraw)
 {
-	os << "I am " << toDraw.getName() << ", " << toDraw.getTitle() << ", and i like ponies!\n";
+	os << "I am " << toDraw.getName() << ", " << toDraw.getTitle() << ", and I like ponies!\n";
 	return os;
 }
 
 Sorcerer::Sorcerer()
 {
-	name = "robert";
+	name = "Robert";
 	title = "wizard by trade";
 	std::cout << name << ", " << title << ", is born!\n";
 }
@@ -41,7 +41,7 @@ Sorcerer::Sorcerer(Sorcerer const & toCopy)
 
 Sorcerer::~Sorcerer()
 {
-	std::cout << name << ", " << title << ", is dead. Consequences will never be the same\n";
+	std::cout << name << ", " << title << ", is dead. Consequences will never be the same!\n";
 }
 
 Sorcerer &Sorcerer::operator=(Sorcerer const & toCopy)

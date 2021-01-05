@@ -6,12 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:16 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 16:11:30 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:20:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
-#include <iostream>
 
 void	FragTrap::beRepaired(unsigned int amount)
 {

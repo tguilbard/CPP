@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:15:52 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 17:44:13 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:52:27 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 # define SCAVTRAP_HPP
 
 # include "ClapTrap.hpp"
-# include <string>
 
 class ScavTrap : public ClapTrap
 {

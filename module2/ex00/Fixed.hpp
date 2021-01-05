@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:08:00 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/01 15:56:47 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 10:49:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,9 +18,8 @@ class Fixed
 	public :
 	Fixed();
 	~Fixed();
-	Fixed operator=(Fixed const & toCopy);
+	void operator=(Fixed const & toCopy);
 	Fixed(Fixed const & toCopy);
-	Fixed(Fixed &&) = default;
 	int getRawBits(void) const;
 	void setRawBits(int const raw);
 

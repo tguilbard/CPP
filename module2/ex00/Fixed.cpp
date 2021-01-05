@@ -6,19 +6,18 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/29 10:22:00 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/01 16:11:46 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 10:51:58 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 #include <iostream>
 
-Fixed	Fixed::operator=(Fixed const & toCopy)
+void	Fixed::operator=(Fixed const & toCopy)
 {
 	std::cout<< "operator =\n";
 	if (this != &toCopy)
 		value = toCopy.getRawBits();
-	return (*this);
 }
 
 int		Fixed::getRawBits(void) const
@@ -42,7 +41,7 @@ Fixed::Fixed()
 Fixed::Fixed(Fixed const & toCopy)
 {
 	std::cout << "copy constructor\n";
-	value = toCopy.getRawBits();
+	*this = toCopy;
 }
 
 Fixed::~Fixed()

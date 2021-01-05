@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 12:21:17 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/09 13:12:39 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/05 09:04:49 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ Character::Character(Character const &toCopy)
 {
 	_name = toCopy.getName();
 	_ap = toCopy.getAP();
-	delete _wpn;
 	_wpn = toCopy.getWeapon();
 }
 
@@ -58,7 +57,6 @@ Character &Character::operator=(Character const &toCopy)
 	{
 		_name = toCopy.getName();
 		_ap = toCopy.getAP();
-		delete _wpn;
 		_wpn = toCopy.getWeapon();
 	}
 	return (*this);

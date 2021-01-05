@@ -6,12 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:51:19 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 16:56:55 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:51:32 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
-#include <iostream>
 
 void	ClapTrap::beRepaired(unsigned int amount)
 {

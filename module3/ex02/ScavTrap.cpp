@@ -6,12 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:15:51 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/25 17:45:59 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:43:15 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
-#include <iostream>
 
 void	ScavTrap::rangedAttack(std::string const & target)
 {

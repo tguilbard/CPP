@@ -6,13 +6,11 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 12:27:49 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/05/26 13:35:27 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:51:56 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "SuperTrap.hpp"
-#include <iostream>
-
 
 void	SuperTrap::meleeAttack(std::string const & target)
 {

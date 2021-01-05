@@ -6,7 +6,7 @@
 #    By: ldutriez <ldutriez@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/16 08:17:15 by ldutriez          #+#    #+#              #
-#    Updated: 2020/12/07 11:06:32 by tguilbar         ###   ########.fr        #
+#    Updated: 2020/12/10 14:58:40 by user42           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,23 +17,23 @@ CC =		g++
 
 SRC_DIR = 	.#$(shell find srcs -type d)
 INC_DIR = 	#$(shell find includes -type d) \
-			$(shell find libs/libft/includes -type d)
+			#$(shell find libs/libft/includes -type d)
 LIB_DIR =	#libs/libft
-OBJ_DIR = 	obj
+#OBJ_DIR = 	.
 
 vpath %.cpp $(foreach dir, $(SRC_DIR), $(dir):)
 
 # List de toute les library a linker au projet (le nom - le lib et - le .a)
-LIB = ft
-#FRAMEWORK = OpenGL Appkit
+LIB = #ft
+#FRAMEWORK =
 
-SRC = $(foreach dir, $(SRC_DIR), $(foreach file, $(wildcard $(dir)/*.cpp), $(notdir $(file))))
+SRC = megaphone.cpp #$(foreach dir, $(SRC_DIR), $(foreach file, $(wildcard $(dir)/*.cpp), $(notdir $(file))))
 
 #NORMAL_SRC =
 
 #BONUS_SRC =
 
-OBJ = $(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
+OBJ = $(SRC:%.cpp=%.o) #$(addprefix $(OBJ_DIR)/, $(SRC:%.cpp=%.o))
 NORMAL_OBJ = $(OBJ) #$(addprefix $(OBJ_DIR)/, $(NORMAL_SRC:%.c=%.o))
 #BONUS_OBJ = $(OBJ) $(addprefix $(OBJ_DIR)/, $(BONUS_SRC:%.c=%.o))
 
@@ -69,16 +69,9 @@ show:
 				@echo "$(_BLUE)LIB_INC :\n$(_YELLOW)$(LIB_INC)$(_WHITE)"
 				@echo "$(_BLUE)INC_DIR :\n$(_YELLOW)$(INC_DIR)$(_WHITE)"
 
-$(OBJ_DIR)/%.o : %.cpp
-				@echo "Compiling $(_YELLOW)$@$(_WHITE) ... \c"
-				@mkdir -p $(OBJ_DIR)
-				@$(CC) $(CFLAGS) $(IFLAGS) -o $@ -c $<
-				@echo "$(_GREEN)DONE$(_WHITE)"
-
-
-$(NAME): 			$(INC_DIR) $(NORMAL_OBJ) Makefile
+$(NAME): 			$(INC_DIR) $(SRC) Makefile
 				@echo "-----\nCreating Executable $(_YELLOW)$@$(_WHITE) ... \c"
-				@$(CC) $(CFLAGS) $(LFLAGS) $(NORMAL_OBJ) -o $(NAME)
+				@$(CC) $(CFLAGS) $(SRC) -o $(NAME)
 				@echo "$(_GREEN)DONE$(_WHITE)\n-----"
 
 #bonus:			$(BONUS_NAME)
@@ -95,7 +88,7 @@ re:				fclean all
 
 clean:
 				@echo "$(_WHITE)Deleting Objects Directory $(_YELLOW)$(OBJ_DIR)$(_WHITE) ... \c"
-				@rm -rf $(OBJ_DIR)
+				@rm -rf $(OBJ)
 				@echo "$(_GREEN)DONE$(_WHITE)\n-----"
 
 fclean:			clean

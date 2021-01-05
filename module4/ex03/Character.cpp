@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/15 11:02:41 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/15 11:45:56 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/05 09:46:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ Character::Character()
 	_inv[1] = NULL;
 	_inv[2] = NULL;
 	_inv[3] = NULL;
+	_nb = 0;
 }
 
 Character::Character(std::string const &name)
@@ -28,19 +29,18 @@ Character::Character(std::string const &name)
 	_inv[1] = NULL;
 	_inv[2] = NULL;
 	_inv[3] = NULL;
+	_nb = 0;
 }
 
 Character::Character(Character const &toCopy)
 {
 	_name = toCopy.getName();
-	delete _inv[0];
-	delete _inv[1];
-	delete _inv[2];
-	delete _inv[3];
-	_inv[0] = toCopy._inv[0]->clone();
-	_inv[1] = toCopy._inv[1]->clone();
-	_inv[2] = toCopy._inv[2]->clone();
-	_inv[3] = toCopy._inv[3]->clone();
+	for (int i = 0; i < 4; i++)
+		if (toCopy._inv[i] != NULL)
+			_inv[i] = toCopy._inv[i]->clone();
+		else
+			_inv[i] = NULL;
+	_nb = toCopy._nb;
 }
 
 Character &Character::operator=(Character const &toCopy)
@@ -52,10 +52,12 @@ Character &Character::operator=(Character const &toCopy)
 		delete _inv[1];
 		delete _inv[2];
 		delete _inv[3];
-		_inv[0] = toCopy._inv[0]->clone();
-		_inv[1] = toCopy._inv[1]->clone();
-		_inv[2] = toCopy._inv[2]->clone();
-		_inv[3] = toCopy._inv[3]->clone();
+		for (int i = 0; i < 4; i++)
+			if (toCopy._inv[i] != NULL)
+				_inv[i] = toCopy._inv[i]->clone();
+			else
+				_inv[i] = NULL;
+		_nb = toCopy._nb;
 	}
 	return (*this);
 }
@@ -75,22 +77,24 @@ std::string const & Character::getName() const
 
 void Character::equip(AMateria* m)
 {
-	int i;
-
-	i = 0;
-	while (_inv[i] != NULL && i < 4)
-		i++;
-	if (i < 4)
-	{
-		_inv[i] = m;
-	}
+	if (_nb == 4 || m == NULL)
+		return ;
+	for (int i = 0; i < _nb; i++) 
+		if (_inv[i] == m)
+			return ;
+	_inv[_nb++] = m;
 }
 
 void Character::unequip(int idx)
 {
-	if (idx < 4 && idx >= 0)
-		if (_inv[idx] != NULL)
-			_inv[idx] = NULL;
+	if (idx < 0 || idx > _nb)
+		return ;
+	for (int i = idx; i < 3; i++)
+	{
+		this->_inv[i] = this->_inv[i + 1];
+        this->_inv[i + 1] = NULL;
+	}
+	_nb--;
 }
 
 void Character::use(int idx, ICharacter& target)

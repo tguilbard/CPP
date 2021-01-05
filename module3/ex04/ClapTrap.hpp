@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:51:20 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 11:04:52 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/04 12:53:00 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,9 @@
 # define CLAPTRAP_HPP
 
 # include <string>
+# include <iostream>
+# include <stdlib.h>
+# include <time.h>
 
 class ClapTrap
 {
@@ -26,7 +29,7 @@ class ClapTrap
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
-	private :
+	protected :
 
 	unsigned int	hit_points;
 	unsigned int	max_hit_points;
