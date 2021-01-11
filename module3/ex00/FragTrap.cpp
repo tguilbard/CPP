@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:16 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/06 14:27:38 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 11:51:43 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,11 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 }
 
+FragTrap::FragTrap()
+{
+
+}
+
 FragTrap::FragTrap(std::string name) :
 hit_points(100), max_hit_points(100), energy_points(100),
 name(name), melee_attack_damage(30),
@@ -79,6 +84,26 @@ ranged_attack_damage(20), armor_rating(5)
 	level = 1;
 	srand(time(NULL));
 	std::cout << name << ": Recompiling my combat code" << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const & toCopy)
+{
+	*this = toCopy;
+}
+
+FragTrap &	FragTrap::operator=(FragTrap const & toCopy)
+{
+	hit_points = toCopy.hit_points;
+	max_hit_points = toCopy.max_hit_points;
+	energy_points = toCopy.energy_points;
+	max_energy_points = toCopy.max_energy_points;
+	level = toCopy.level;
+	name = toCopy.name;
+	melee_attack_damage = toCopy.melee_attack_damage;
+	ranged_attack_damage = toCopy.ranged_attack_damage;
+	armor_rating = toCopy.armor_rating;
+
+	return (*this);
 }
 
 FragTrap::~FragTrap()

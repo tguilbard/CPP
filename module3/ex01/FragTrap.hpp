@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:20 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:22:41 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 11:47:20 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ class FragTrap
 
 	FragTrap(std::string name);
 	~FragTrap();
+	
+	FragTrap(FragTrap const &toCopy);
+	FragTrap & operator=(FragTrap const &toCopy);
+
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
@@ -31,6 +35,7 @@ class FragTrap
 	void vaulthunter_dot_exe(std::string const & target);
 
 	private :
+	FragTrap();
 
 	unsigned int	hit_points;
 	unsigned int	max_hit_points;

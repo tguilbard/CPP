@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 12:25:31 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:52:39 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 13:01:04 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,17 @@
 
 class SuperTrap : public FragTrap, public NinjaTrap
 {
+	private :
+	SuperTrap();
+
 	public :
 
 	SuperTrap(std::string name);
 	~SuperTrap();
+		
+	SuperTrap(SuperTrap const & toCopy);
+	SuperTrap & operator=(SuperTrap const & toCopy);
+
 	void meleeAttack(std::string const & target);
 	void rangedAttack(std::string const & target);
 

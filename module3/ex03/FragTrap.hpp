@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:20 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:48:13 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 12:05:48 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,10 +17,17 @@
 
 class FragTrap : public ClapTrap
 {
+	private :
+		FragTrap();
+
 	public :
 
 	FragTrap(std::string name);
 	~FragTrap();
+
+	FragTrap(FragTrap const & toCopy);
+	FragTrap & operator=(FragTrap const & toCopy);
+
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void vaulthunter_dot_exe(std::string const & target);

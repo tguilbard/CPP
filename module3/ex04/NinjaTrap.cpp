@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/26 11:35:59 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:51:47 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 12:57:40 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,16 +74,24 @@ void	NinjaTrap::ninjaShoeBox(NinjaTrap & target)
 		std::cout << name << " not enough energy" << std::endl;
 }
 
-NinjaTrap::NinjaTrap(std::string name) : ClapTrap(name)
+NinjaTrap::NinjaTrap(std::string name) :
+ClapTrap(name, 60, 60, 120, 120, 60, 5, 0)
 {
-	hit_points = 60;
-	max_hit_points = 60;
-	energy_points = 120;
-	max_energy_points = 120;
-	melee_attack_damage = 60;
-	ranged_attack_damage = 5;
-	armor_rating = 0;
 	std::cout << name << ": Starting ninja device" << std::endl;
+}
+
+NinjaTrap::NinjaTrap(NinjaTrap const & toCopy) :
+ClapTrap(toCopy.name)
+{
+	std::cout << name << ": Starting ninja device" << std::endl;
+	*this = toCopy;	
+}
+
+NinjaTrap & NinjaTrap::operator=(NinjaTrap const & toCopy)
+{
+	ClapTrap::copy(toCopy);
+
+	return (*this);
 }
 
 NinjaTrap::~NinjaTrap()

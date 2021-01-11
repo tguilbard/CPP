@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:15:51 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/06 14:29:22 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 11:50:01 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,10 @@ void	ScavTrap::challengeNewcomer()
 	}
 }
 
+ScavTrap::ScavTrap()
+{
+}
+
 ScavTrap::ScavTrap(std::string name) :
 hit_points(100), max_hit_points(100), energy_points(50),
 name(name), melee_attack_damage(20),
@@ -79,6 +83,26 @@ ranged_attack_damage(15), armor_rating(3)
 	level = 1;
 	srand(time(NULL));
 	std::cout << name << ": This time it'll be awesome, I promise!" << std::endl;
+}
+
+ScavTrap::ScavTrap(ScavTrap const & toCopy)
+{
+	*this = toCopy;
+}
+
+ScavTrap &	ScavTrap::operator=(ScavTrap const & toCopy)
+{
+	hit_points = toCopy.hit_points;
+	max_hit_points = toCopy.max_hit_points;
+	energy_points = toCopy.energy_points;
+	max_energy_points = toCopy.max_energy_points;
+	level = toCopy.level;
+	name = toCopy.name;
+	melee_attack_damage = toCopy.melee_attack_damage;
+	ranged_attack_damage = toCopy.ranged_attack_damage;
+	armor_rating = toCopy.armor_rating;
+
+	return (*this);
 }
 
 ScavTrap::~ScavTrap()

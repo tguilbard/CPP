@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:15:52 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:23:20 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 11:47:43 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,10 @@ class ScavTrap
 
 	ScavTrap(std::string name);
 	~ScavTrap();
+
+	ScavTrap(ScavTrap const & toCopy);
+	ScavTrap & operator=(ScavTrap const & toCopy);
+
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
@@ -31,6 +35,7 @@ class ScavTrap
 	void challengeNewcomer();
 
 	private :
+	ScavTrap();
 
 	unsigned int	hit_points;
 	unsigned int	max_hit_points;

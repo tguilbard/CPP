@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:51:20 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:45:51 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 12:43:13 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,18 @@ class ClapTrap
 
 	ClapTrap(std::string name);
 	~ClapTrap();
+
+	ClapTrap(ClapTrap const & toCopy);
+	ClapTrap & operator=(ClapTrap const & toCopy);
+
 	void rangedAttack(std::string const & target);
 	void meleeAttack(std::string const & target);
 	void takeDamage(unsigned int amount);
 	void beRepaired(unsigned int amount);
 
 	protected :
+	ClapTrap(std::string name, int hp, int mhp, int ep, int mep, int mad, int rad, int ar);
+	void	copy(ClapTrap const & toCopy);
 
 	unsigned int	hit_points;
 	unsigned int	max_hit_points;
@@ -41,6 +47,8 @@ class ClapTrap
 	unsigned int	ranged_attack_damage;
 	unsigned int	armor_rating;
 
+	private :
+	ClapTrap();
 };
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:16 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:51:37 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/11 12:56:45 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,16 +47,24 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 	}
 }
 
-FragTrap::FragTrap(std::string name) : ClapTrap(name)
+FragTrap::FragTrap(std::string name) :
+ClapTrap(name, 100, 100, 100, 100, 30, 20, 5)
 {
-	hit_points = 100;
-	max_hit_points = 100;
-	energy_points = 100;
-	max_energy_points = 100;
-	melee_attack_damage = 30;
-	ranged_attack_damage = 20;
-	armor_rating = 5;
 	std::cout << name << ": Recompiling my combat code" << std::endl;
+}
+
+FragTrap::FragTrap(FragTrap const & toCopy) :
+ClapTrap(toCopy.name)
+{
+	std::cout << name << ": Recompiling my combat code" << std::endl;
+	*this = toCopy;	
+}
+
+FragTrap & FragTrap::operator=(FragTrap const & toCopy)
+{
+	ClapTrap::copy(toCopy);
+
+	return (*this);
 }
 
 FragTrap::~FragTrap()
