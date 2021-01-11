@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 11:47:16 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:22:47 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/06 14:28:30 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,11 @@ void	FragTrap::vaulthunter_dot_exe(std::string const & target)
 
 FragTrap::FragTrap(std::string name) :
 hit_points(100), max_hit_points(100), energy_points(100),
-max_energy_points(100), level(1), name(name), melee_attack_damage(30),
+name(name), melee_attack_damage(30),
 ranged_attack_damage(20), armor_rating(5)
 {
+	max_energy_points = 100;
+	level = 1;
 	srand(time(NULL));
 	std::cout << name << ": Recompiling my combat code" << std::endl;
 }

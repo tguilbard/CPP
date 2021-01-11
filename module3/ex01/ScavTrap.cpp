@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/25 15:15:51 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:22:56 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/06 14:29:22 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,9 +72,11 @@ void	ScavTrap::challengeNewcomer()
 
 ScavTrap::ScavTrap(std::string name) :
 hit_points(100), max_hit_points(100), energy_points(50),
-max_energy_points(50), level(1), name(name), melee_attack_damage(20),
+name(name), melee_attack_damage(20),
 ranged_attack_damage(15), armor_rating(3)
 {
+	max_energy_points = 50;
+	level = 1;
 	srand(time(NULL));
 	std::cout << name << ": This time it'll be awesome, I promise!" << std::endl;
 }
