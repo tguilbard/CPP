@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 10:28:55 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 11:33:42 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/19 10:25:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,6 @@ using namespace std;
 class Sorcerer
 {
 	public :
-	Sorcerer();
 	Sorcerer(string p_name, string p_title);
 	Sorcerer(Sorcerer const & toCopy);
 	~Sorcerer();
@@ -30,6 +29,7 @@ class Sorcerer
 	void polymorph(Victim const &toPoly) const;
 
 	private:
+	Sorcerer();
 	string name;
 	string title;
 };

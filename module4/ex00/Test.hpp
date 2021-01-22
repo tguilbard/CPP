@@ -1,30 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Peon.hpp                                           :+:      :+:    :+:   */
+/*   Test.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 11:40:26 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/19 10:24:30 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/19 10:32:44 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef PEON_HPP
-# define PEON_HPP
+#ifndef TEST_HPP
+# define TEST_HPP
 
 # include "Victim.hpp"
 # include "iostream"
 using namespace std;
 
-class Peon : public Victim
+class Test : public Victim
 {
 	public :
-	Peon();
-	Peon(string p_name);
-	Peon(Peon const & toCopy);
-	virtual ~Peon();
-	Peon &operator=(Peon const & toCopy);
+	Test();
+	Test(string p_name);
+	Test(Test const & toCopy);
+	virtual ~Test();
+	Test &operator=(Test const & toCopy);
 	virtual void getPolymorphed(void) const;
 
 };

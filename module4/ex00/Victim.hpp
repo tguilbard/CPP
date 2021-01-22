@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 11:08:09 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 12:10:42 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/19 10:24:12 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ class Victim
 	Victim();
 	Victim(string p_name);
 	Victim(Victim const & toCopy);
-	~Victim();
+	virtual ~Victim();
 	Victim &operator=(Victim const & toCopy);
 	string getName(void) const;
 	virtual void getPolymorphed(void) const;

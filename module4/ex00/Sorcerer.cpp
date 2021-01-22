@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 10:37:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/04 12:59:55 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/19 10:25:38 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,6 @@ ostream& operator<<(ostream& os, Sorcerer const & toDraw)
 {
 	os << "I am " << toDraw.getName() << ", " << toDraw.getTitle() << ", and I like ponies!\n";
 	return os;
-}
-
-Sorcerer::Sorcerer()
-{
-	name = "Robert";
-	title = "wizard by trade";
-	std::cout << name << ", " << title << ", is born!\n";
 }
 
 Sorcerer::Sorcerer(string p_name, string p_title)
