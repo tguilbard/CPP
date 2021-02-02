@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/09 11:43:43 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/05 09:03:44 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/22 12:36:33 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,8 @@ int main(void)
 	Character charaFriend(you);
 	std::cout << charaFriend;
 	charaFriend = you;
-	std::cout << "\nici\n\n";
+	std::cout << charaFriend;
+	charaFriend.recoverAP();
 	std::cout << charaFriend;
 
 	SuperMutant m;

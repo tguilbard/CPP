@@ -6,20 +6,20 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 10:37:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/19 10:25:38 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/22 12:33:02 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Sorcerer.hpp"
 #include "iostream"
 
-ostream& operator<<(ostream& os, Sorcerer const & toDraw)
+std::ostream& operator<<(std::ostream& os, Sorcerer const & toDraw)
 {
 	os << "I am " << toDraw.getName() << ", " << toDraw.getTitle() << ", and I like ponies!\n";
 	return os;
 }
 
-Sorcerer::Sorcerer(string p_name, string p_title)
+Sorcerer::Sorcerer(std::string p_name, std::string p_title)
 {
 	name = p_name;
 	title = p_title;
@@ -47,12 +47,12 @@ Sorcerer &Sorcerer::operator=(Sorcerer const & toCopy)
 	return (*this);
 }
 
-string Sorcerer::getName(void) const
+std::string Sorcerer::getName(void) const
 {
 	return (name);
 }
 
-string Sorcerer::getTitle(void) const
+std::string Sorcerer::getTitle(void) const
 {
 	return (title);
 }

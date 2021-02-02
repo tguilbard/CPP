@@ -6,14 +6,14 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 11:09:47 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 11:51:17 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/22 12:33:11 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Victim.hpp"
 #include "iostream"
 
-ostream& operator<<(ostream& os, Victim const & toDraw)
+std::ostream& operator<<(std::ostream& os, Victim const & toDraw)
 {
 	os << "I'm " << toDraw.getName() << " and I like otters!\n";
 
@@ -26,7 +26,7 @@ Victim::Victim()
 	std::cout << "A random victim called " << name << " just appeared!\n";
 }
 
-Victim::Victim(string p_name)
+Victim::Victim(std::string p_name)
 {
 	name = p_name;
 	std::cout << "A random victim called " << name << " just appeared!\n";
@@ -48,7 +48,7 @@ Victim &Victim::operator=(Victim const & toCopy)
 	return (*this);
 }
 
-string Victim::getName(void) const
+std::string Victim::getName(void) const
 {
 	return  (name);
 }

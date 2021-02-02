@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 11:42:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2021/01/19 10:32:12 by user42           ###   ########.fr       */
+/*   Updated: 2021/01/22 12:30:24 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Test::Test() : Victim()
 	std::cout << "Test!start\n";
 }
 
-Test::Test(string p_name) : Victim(p_name)
+Test::Test(std::string p_name) : Victim(p_name)
 {
 	std::cout << "Test!start\n";
 }

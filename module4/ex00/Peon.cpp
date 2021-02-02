@@ -6,7 +6,7 @@
 /*   By: tguilbar <tguilbar@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/08 11:42:03 by tguilbar          #+#    #+#             */
-/*   Updated: 2020/06/08 12:03:22 by tguilbar         ###   ########.fr       */
+/*   Updated: 2021/01/22 12:29:28 by user42           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ Peon::Peon() : Victim()
 	std::cout << "Zog zog.\n";
 }
 
-Peon::Peon(string p_name) : Victim(p_name)
+Peon::Peon(std::string p_name) : Victim(p_name)
 {
 	std::cout << "Zog zog.\n";
 }
